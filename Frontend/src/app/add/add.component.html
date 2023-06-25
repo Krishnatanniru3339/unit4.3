@@ -1,0 +1,56 @@
+<html>
+  <div style="text-align-last: right; padding-right: 45%">
+    <h1>Add Jobs Here</h1>
+
+    <label><b>Job Name</b></label
+    >&nbsp;&nbsp;&nbsp;&nbsp;
+    <input
+      style="text-align-last: start"
+      type="text"
+      name="jobName"
+      id="jobName"
+      #jobName
+    /><br />
+    <label><b>Description</b></label
+    >&nbsp;
+    <input
+      style="text-align-last: start"
+      type="text"
+      name="description"
+      id="description"
+      #description
+    /><br />
+
+    <label><b>Location</b></label
+    >&nbsp;
+    <input
+      style="text-align-last: start"
+      type="string"
+      name="location"
+      id="location"
+      #location
+    /><br />
+    <label><b>Salary</b></label
+    >&nbsp;
+    <input
+      style="text-align-last: start"
+      type="number"
+      name="salary"
+      id="salary"
+      #salary
+    /><br />
+    <br />
+    <button
+      type="button"
+      style="margin-right: 6%"
+      (click)="
+        Add(jobName.value, description.value, location.value, salary.value)
+      "
+    >
+      Add
+    </button>
+    <button type="button" style="margin-right: 15px">
+      <a routerLink="/home" style="text-decoration: none; color: black">Back</a>
+    </button>
+  </div>
+</html>

@@ -1,0 +1,68 @@
+<div>
+  <h1 style="text-align-last: center">Job Portal</h1>
+  <button
+    type="button"
+    style="margin-right: 10%; margin-left: 38%; margin-bottom: 10px"
+  >
+    <a routerLink="/add" style="text-decoration: none; color: black">Add Job</a>
+  </button>
+  <label><b>Search By Id</b></label
+  >&nbsp;
+  <input
+    style="text-align-last: start"
+    type="text"
+    name="search"
+    id="search"
+    #search
+  />
+  <button type="button" (click)="Search(search.value)">Search</button>
+
+  <br />
+
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td,
+    th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+  </style>
+  <table style="width: 75%; margin-left: 13%">
+    <tr>
+      <th>Job Id</th>
+      <th>Job Name</th>
+      <th>Description</th>
+      <th>Location</th>
+      <th>Salary</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let post of data">
+      <td>{{ post?.job_id }}</td>
+      <td>{{ post?.title }}</td>
+      <td>{{ post?.description }}</td>
+      <td>{{ post?.location }}</td>
+      <td>{{ post?.salary }}</td>
+      <td>
+        <button type="button" style="margin-right: 15px">
+          <a
+            routerLink="/update"
+            [state]="post"
+            style="text-decoration: none; color: black"
+            >Edit</a
+          >
+        </button>
+        <button type="button" (click)="delete(post.job_id)">Delete</button>
+      </td>
+    </tr>
+  </table>
+</div>
